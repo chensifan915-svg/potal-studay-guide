@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One&family=Rampart+One&display=swap" rel="stylesheet">
+    <title>Potal Study Guide</title>
+</head>
+<body>
+    <header>
+        <h2>Potal Study Guide</h2>
+        <nav class="hide-nav">
+            <ul>
+            <li><a href="#" onclick="sortBooks('recently'); return false;">recently</a></li>
+            <li><a href="#" onclick="sortBooks('old'); return false;">old</a></li>
+            <li><a href="#" onclick="sortBooks('amount'); return false;">amount</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="setup-box">
+        <h3>参考書に関しての情報を入力！</h3>
+        <div class="name-group">
+            <label for="book-name">参考書名：</label><br>
+            <input type="text" id="book-name" name="book-name" placeholder="例：青チャート" required>
+        </div>
+
+        <div class="pages-group">
+            <label for="all-pages-number">総ページ数：</label><br>
+            <input type="number" id="all-pages-number" name="pages-number" placeholder="総ページ数を入力"required min="1" class="form-control">
+        </div>
+
+        <div class="pages-group">
+            <label>終わったページ数：</label><br>
+            <input type="number" id="donePages" name="donePages" placeholder="現状終わっているページ数を入力" required min="1">
+        </div>
+
+        <button onclick="addBookData()">追加する</button>
+    </div>
+
+    <div class="chart-box">
+        <h3>学習進捗状況</h3>
+        
+        <div  id="chart-container" style="position: relative; height: 100px; width: 100%;">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div id="progressText">参考書を登録</div>
+    </div>
+
+
+    <div class="setup-box" id="management-section" style="margin-top: 20px;">
+        <h3>参考書の管理</h3>
+        <div id="book-management-container">登録された参考書はありません。</div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
