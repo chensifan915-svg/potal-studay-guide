@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Klee One", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(169, 169, 169, 0.8);
+    text-align: center;
+}
+
+header h2 {
+    font-size: 30px;
+    margin-top: 5px;
+    font-family: "Geist Pixel", sans-serif;
+    font-optical-sizing: 600px;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "ELSH" element shape;
+}
+
+header nav {
+    padding-top: 5px;
+}
+
+header nav.hide-nav {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    height: 0;
+    padding-top: 0;
+    overflow: hidden;
+}
+
+header nav.show-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+    height: auto;
+    padding-top: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+nav a:hover {
+    font-family: "Rampart One", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    font-family: "Rampart One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 10px;
+}
+
+.setup-box h3 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+div.chart-box h3 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+div.pages-group {
+    margin-top: 2px;
+    padding: 20px;
+} 
+
+div.chart-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+div.setup-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+div.name-group {
+    font-size: 20px;
+    padding-top: 10px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+div.pages-group {
+    font-size: 20px;
+}
+
+/* すべてのテキスト入力・数値入力の箱に適用する場合 */
+input[type="text"],
+input[type="number"] {
+    width: 100%;            /* 横幅を親要素いっぱいに広げる */
+    max-width: 400px;       /* 広がりすぎないように最大幅を制限 */
+    padding: 5px 10px;     /* 箱の中の上下・左右の余白 */
+    font-size: 16px;        /* 文字の大きさ */
+    border: 2px solid #ccc; /* 枠線の太さ・種類・色 */
+    border-radius: 6px;     /* 角の丸み */
+    background-color: #fff; /* 箱の背景色 */
+    outline: none;          /* 入力時のデフォルトの青い外枠を消す */
+    transition: all 0.3s;   /* 変化をなめらかにする */
+}
+
+/*スマホ向けのスタイル*/
+@media (max-width: 768px) {
+    /*トップの部分を立て並びに変更*/
+    .header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
